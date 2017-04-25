@@ -14,7 +14,7 @@ module.exports = function (context, req) {
   youtube.setKey('AIzaSyBO16-NgI5Lx8gPytGvsa2Hqb7rNftArCA')
 
   // Get video data from API
-  youtube.search(category, 50, function (error, result) {
+  youtube.search(category, 50, {part: 'snippet, contentDetails, statistics'}, function (error, result) {
     if (error) {
       context.log(error)
       context.done()
